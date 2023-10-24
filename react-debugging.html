@@ -63,13 +63,16 @@
           padding: "10px"
         }
         // No need to change anything ABOVE this line ^
-
+        // This return was broken. If I return is handling multiple elements they must be wrapped. I added fragments on line 69 <> and line 86 </>
+        // The drawCard button was built but wasn't calling the drawCard function. Added drawCard inside {} on Line 71
+        // The shuffle button onClick handler was all lowercase. Corrected onclick to onClick on LIne 75
         return (
+          <>
           <h1>Draw a Card</h1>
-          <button onClick={}>
+          <button onClick={drawCard}>
             Click to Draw a Card
           </button>
-          <button onclick={shuffle}>
+          <button onClick={shuffle}>
             Return Cards and Shuffle Deck
           </button>
           <div style={handStyles}>
@@ -81,6 +84,7 @@
               )
             })}
           </div>
+          </>
         )
       }
 
